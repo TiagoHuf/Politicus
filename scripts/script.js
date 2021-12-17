@@ -610,14 +610,14 @@ function geraBotaoLegislatura(jsonObj) {
 
     //Laço que preenche as colunas do dropdown com datas de legislaturas até o momento
     for (let i = 0; i < jsonObj.dados.length; i++) {
-        botaoLegislatura += '<li><a class="dropdown-item" href="#"value="' + jsonObj.dados[i].id + '" id="' + jsonObj.dados[i].id +
+        botaoLegislatura += '<li><a class="dropdown-item" data-bs-toggle="collapse" data-bs-target="#menubarNav" href="#"value="' + jsonObj.dados[i].id + '" id="' + jsonObj.dados[i].id +
             '" onclick=retornaPartidos("?dataInicio=' + jsonObj.dados[i].dataInicio + '&dataFim=' + jsonObj.dados[i].dataFim +
             '&ordem=ASC&ordenarPor=sigla")>' + moment(jsonObj.dados[i].dataInicio).format("DD-MM-YYYY") + ' - ' + moment(jsonObj.dados[i].dataFim).format("DD-MM-YYYY") + '</a></li>';
     }
 
     //Concatena com o fechamento do dropdown
     botaoLegislatura += '<li><hr class="dropdown-divider"></li>' +
-        '<li><a class="dropdown-item" href="#" onclick=buscarPartidos()>Exibir ativos</a></li></ul></div>';
+        '<li><a data-bs-toggle="collapse" data-bs-target="#menubarNav" class="dropdown-item" href="#" onclick=buscarPartidos()>Exibir ativos</a></li></ul></div>';
 
     //Transforma em html
     botao.innerHTML = botaoLegislatura;
