@@ -175,7 +175,7 @@ function buscarDeputadosPartido(sigla) {
         retornaDeputados(partido);
 
         //Variável que receberá código html
-        let texto = "<h4>Deputados do " + selectPartido.options[selectPartido.selectedIndex].value + '</h4>';
+        let texto = "<h4>Deputados do " + selectPartido.options[selectPartido.selectedIndex].text + '</h4>';
 
         //Gerando alterações na interface para condizer com a busca
         opcaoDeputados.innerHTML = texto;
