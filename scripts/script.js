@@ -442,7 +442,7 @@ function exibePartido(jsonObj) {
     }
 
     //Variável que receberá o código html do card do partido
-    let partido = '<div class="card"><img src="' + jsonObj.dados.urlLogo + '" class="card-img-top" alt="..." ' +
+    let partido = '<div class="card" style="width: 80%;"><img src="' + jsonObj.dados.urlLogo + '" class="card-img-top" alt="..." ' +
         'id="img"><div class="card-body"><h5 class="card-title">' + jsonObj.dados.nome + '</h5><p class="card-text"><b>Situação:</b>' +
         jsonObj.dados.status.situacao + '<br><b>Lider:</b> ' + jsonObj.dados.status.lider.nome + '</div></div>';
 
@@ -504,8 +504,8 @@ function periodo() {
 function geraRelatorioGastos(jsonList) {
 
     //Variável que recebe o código html
-    let relatorioGastos = '<table class="table"><thead><tr><th scope="col">Data</th><th scope="col">Tipo<th scope="col">' +
-        'Fornecedor</th><th scope="col">Valor</th><th scope="col">DANFE</th></th></thead><tbody>';
+    let relatorioGastos = '<table class="table"><thead><tr><th scope="col">Data</th><th scope="col">' +
+        'Fornecedor</th><th scope="col">Valor</th><th scope="col">DANFE</th></tr></thead><tbody>';
 
     //Variável que carrega a soma das despesas dos deputados
     let total = 0;
@@ -545,8 +545,8 @@ function geraRelatorioGastos(jsonList) {
         if (aux >= variavel1 && aux <= variavel2) {
 
             //É acrescentado às colunas as linhas com suas respectivas informações
-            relatorioGastos += '<tr><th scope="row">' + aux + '/' + jsonList.dados[i].mes + '/' + jsonList.dados[i].ano + '</th><td>'
-                + jsonList.dados[i].tipoDespesa + '</td><td>' + jsonList.dados[i].nomeFornecedor + '</td><td>R$' + jsonList.dados[i].valorLiquido +
+            relatorioGastos += '<tr><th scope="row">' + aux + '/' + jsonList.dados[i].mes + '/' + jsonList.dados[i].ano + '</th>' +
+                '<td>' + jsonList.dados[i].nomeFornecedor + '</td><td>R$' + jsonList.dados[i].valorLiquido +
                 '<td><a href="' + jsonList.dados[i].urlDocumento + '" target="_blank">Ver</a></td></th></tr></th>';
 
             //Soma o gasto que acabou de ser acrescentado ao valor total da despesa
