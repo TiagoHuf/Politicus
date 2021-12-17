@@ -442,7 +442,7 @@ function exibePartido(jsonObj) {
     }
 
     //Variável que receberá o código html do card do partido
-    let partido = '<div class="card" style="width: 80%;"><img src="' + jsonObj.dados.urlLogo + '" class="card-img-top" alt="..." ' +
+    let partido = '<div class="card" style="width: 62%;"><img src="' + jsonObj.dados.urlLogo + '" class="card-img-top" alt="..." ' +
         'id="img"><div class="card-body"><h5 class="card-title">' + jsonObj.dados.nome + '</h5><p class="card-text"><b>Situação:</b>' +
         jsonObj.dados.status.situacao + '<br><b>Lider:</b> ' + jsonObj.dados.status.lider.nome + '</div></div>';
 
