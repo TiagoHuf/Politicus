@@ -580,7 +580,7 @@ function geraRelatorioGastos(jsonList) {
 //Request de legislaturas do Brasil
 function requestLegislatura(id) {
     let request = new XMLHttpRequest();
-    request.open('GET', urlGoverno + "legislaturas" + id, false);
+    request.open('GET', urlGoverno + "legislaturas" + id, true);
     request.onload = function (e) {
         if (request.readyState === 4) {
             if (request.status === 200) {
